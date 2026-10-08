@@ -1,0 +1,26 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: airspace-postgis
+    environment:
+      POSTGRES_DB: airspace_db
+      POSTGRES_USER: flight_admin
+      POSTGRES_PASSWORD: flight_secure_pwd
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    build: .
+    container_name: airspace-validator-api
+    depends_on:
+      - postgis
+    environment:
+      DB_HOST: postgis
+      DB_PORT: 5432
+      DB_NAME: airspace_db
+      DB_USER: flight_admin
+      DB_PASSWORD: flight_secure_pwd
+    ports:
+      - "8000:8000"
