@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": "CYR-603",
+        "name": "Mirabel Terminal Control Area",
+        "class": "Class C",
+        "lower_limit_m": 150.0,
+        "upper_limit_m": 3500.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -74.1,
+              45.6,
+              150.0
+            ],
+            [
+              -74.0,
+              45.6,
+              150.0
+            ],
+            [
+              -74.0,
+              45.75,
+              150.0
+            ],
+            [
+              -74.1,
+              45.75,
+              150.0
+            ],
+            [
+              -74.1,
+              45.6,
+              150.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
